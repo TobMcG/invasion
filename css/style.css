@@ -1,0 +1,77 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+#backgroundImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    background-image: url(../assets/pics/saxophone-jazzBand.jpg);
+    background-position: left bottom;
+    background-size: cover;
+}
+ul#menu {
+    background-color: rgba(223,194,125,1);
+    position: absolute;
+    font-family: 'Niconne', cursive;
+    font-size: 0;
+    text-align: justify;
+    list-style-type: none;
+    padding: 0;
+    margin: 10px;
+    border-radius: 15px;
+}
+ul#menu:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+ul#menu li {
+    display: inline-block;
+    padding: 0.2em 0;
+    font-size: 28px;
+}
+ul#menu li:first-child {
+    margin-left: 2em;
+}
+ul#menu li:last-child {
+    margin-right: 2em;
+}
+ul#menu li a {
+    color: black;
+    text-decoration: none;
+    border-style: solid;
+    border-width: 0 0 2.5px 0;
+    border-bottom-color: rgba(223,194,125,1);
+}
+ul#menu li a:hover {
+    border-bottom-color: #C23627;
+}
+#regStats {
+    position: absolute;
+    bottom: 10px;
+    right: 339px;
+    height: 192px;
+    background-color: rgba(230,230,230,0.75);
+    border-style: solid;
+    border-width: 4px 0 4px 0;
+    border-top-color: rgba(223,194,125,1);
+    border-bottom-color: rgba(223,194,125,1);
+    border-top-left-radius: 26px;
+    border-bottom-left-radius: 26px;
+    overflow: hidden;
+}
+#regStats #tab {
+    width: 30px;
+    height: 192px;
+    background-color: rgba(223,194,125,1);
+}
+#regStats #stats {
+    position: absolute;
+    left: 30px;
+    padding: 15px;
+}

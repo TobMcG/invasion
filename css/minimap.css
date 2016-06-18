@@ -1,0 +1,45 @@
+#map {
+    cursor: default;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 325px;
+    height: 192px;
+    border-style: solid;
+    border-width: 4px 4px 4px 0;
+    border-color: rgba(223,194,125,1);
+}
+.leaflet-control-attribution.leaflet-control {
+    font-size: 8px;
+}
+svg {
+    position: relative;
+}
+.travelMarker {
+    fill: #C23627;
+    opacity: 1;
+}
+.waypoints {
+    fill: none;
+    opacity: 1;
+}
+.begin {
+    fill: #b9d286;
+    stroke: black;
+    opacity: 1;
+    stroke-width: 1px;
+    stroke-opacity: 1;
+}
+.linePath {
+    fill: none;
+    stroke: #b9d286;
+    stroke-width: 3.5px;
+    stroke-linecap: "round";
+    opacity: 1;
+}
+.locationNames {
+    fill: black;
+    text-shadow: 1px 1px 1px #FFF, 3px 3px 5px #000;
+    font-weight: bold;
+    font-size: 13px;
+}

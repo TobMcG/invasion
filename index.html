@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Jumptown Invasion 2017</title>
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link href='https://fonts.googleapis.com/css?family=Niconne' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/minimap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="http://d3js.org/d3.v3.min.js" type="text/javascript"></script>
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div id="backgroundImage"></div>
+    <div id="map"></div>
+    <div id="regStats">
+        <div id="stats">Registration Statistics So Far</div>
+        <div id="tab"></div>
+    </div>
+    <ul id="menu">
+        <li><a href="#" onclick="loadSplash()">Venues</a></li>
+        <li><a href="#" onclick="loadSplash()">Schedule</a></li>
+        <li><a href="#" onclick="loadInstructors()">Instructors</a></li>
+        <li><a href="#" onclick="loadMusic()">Music</a></li>
+        <li><a href="" target="_blank">Register</a></li>
+    </ul>
+
+    <script src="js/pageTransitions.js"></script>
+    <script src="js/continuousRe_styling.js"></script>
+    <script src="js/createAnimatedLine.js"></script>
+    <script src="js/registrants.js"></script>
+
+    <!--Driving Routes-->
+    <script src="assets/drivingRoutes/chicago.js"></script>
+    <script src="assets/drivingRoutes/desMoines.js"></script>
+    <script src="assets/drivingRoutes/indianapolis.js"></script>
+    <script src="assets/drivingRoutes/iowaCity.js"></script>
+    <script src="assets/drivingRoutes/milwaukee.js"></script>
+    <script src="assets/drivingRoutes/stLouis.js"></script>
+    <script src="assets/drivingRoutes/twinCities.js"></script>
+
+    <script src="assets/drivingRoutes/daneAirport.js"></script>
+
+    <!--Flying Routes-->
+    <script src="assets/flyingRoutes/denver.js"></script>
+    <script src="assets/flyingRoutes/madrid.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

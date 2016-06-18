@@ -51,27 +51,3 @@ ul#menu li a {
 ul#menu li a:hover {
     border-bottom-color: #C23627;
 }
-#regStats {
-    position: absolute;
-    bottom: 10px;
-    right: 339px;
-    height: 192px;
-    background-color: rgba(230,230,230,0.75);
-    border-style: solid;
-    border-width: 4px 0 4px 0;
-    border-top-color: rgba(223,194,125,1);
-    border-bottom-color: rgba(223,194,125,1);
-    border-top-left-radius: 26px;
-    border-bottom-left-radius: 26px;
-    overflow: hidden;
-}
-#regStats #tab {
-    width: 30px;
-    height: 192px;
-    background-color: rgba(223,194,125,1);
-}
-#regStats #stats {
-    position: absolute;
-    left: 30px;
-    padding: 15px;
-}

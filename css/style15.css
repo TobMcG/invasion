@@ -84,6 +84,15 @@ ul#menu {
     padding: 0px;
     margin: 0px;
 }
+#mobileMenu {
+    opacity: 0;
+    position: absolute;
+    font-size: 32px;
+    font-weight: 900;
+    font-style: normal;
+    right: 16px;
+    top: 9px;
+}
 ul#menu li {
     cursor: pointer;
     display: block;

@@ -66,4 +66,21 @@ function generateContentHTML(htmlArray) {
 
 // KICKOFF!
 $('#mainContent').css("opacity", 0);
+$('#mobileMenu').on('click', function() {
+
+    $('ul#menu li').off('click');
+
+    $('#mobileMenu').css("opacity", 0);
+    $('ul#menu li').css("display", "block");
+    $('ul#menu').css("height", "100%");
+
+    $('ul#menu li').on('click', function() {
+
+        $('#mobileMenu').css("opacity", "");
+        $('ul#menu li').css("display", "");
+        $('ul#menu').css("height", "");
+
+    });
+
+});
 setupHoverEvents();

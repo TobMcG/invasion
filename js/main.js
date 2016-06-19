@@ -1,81 +1,69 @@
 function loadBackgroundPic(element, image, position) {
 
+    var grayscale = '0.6';
+    $('#mainContent').animate({ opacity: 0, }, { duration: 1000, });
+    deanimateMenuItem($('.active'));
+    setupHoverEvents();
+
     if ( !$(element).is($('.active')) ) {
 
-        d3.select('#backgroundImage')
-        .transition().duration(1000)
-        .style("opacity", 0).each("end", function() {
-            $('#backgroundImage').css("background-image", "url(assets/pics/"+image+".jpg)");
-            $('#backgroundImage').css("background-position", position);
-        })
-        .transition().duration(1000)
-        .style("opacity", 1);
-
-        deanimateMenuItem($('.active'));
         $('.active').removeClass('active');
-        setupHoverEvents();
+        $('#mainContent').animate({ opacity: 1, }, { duration: 1000, });
 
-        $(element).addClass('active');
-        $(element).off("mouseenter mouseleave");
-        $(element).css("background-color", "#C23627");
-        $(element).css("bottom-border-color", "#C23627");
-        $(element).find("a:first-child").css("color", "white");
-        $(element).find("a:first-child").animate({
+        $(element).addClass('active')
+        .off("mouseenter mouseleave")
+        .css("background-color", "#C23627")
+        .css("border-bottom-color", "#C23627")
+        .find("a:first-child").css("color", "white")
+        .animate({
             right: $(element).width() //width of the content area of <li>
+                +0.4*parseFloat($(element).css("font-size")) //the <li> margin is 0.8em
                 -$(element).find("a:first-child").width(), //the width of the text itself
-        }, {
-            duration: 1000,
-            queue: false,
-        });
+        }, { duration: 1000, queue: false, });
 
+    } else {
+        $('.active').removeClass('active');
+        image = 'saxophone-jazzBand';
+        position = 'left bottom';
+        grayscale = '0';
     }
 
+    d3.select('#backgroundImage').transition().duration(1000)
+    .style("opacity", 0).each("end", function() {
+
+        $('#backgroundImage').css("background-position", position)
+        .css("background-image", "url(assets/pics/"+image+".jpg)")
+        .css("filter", "grayscale(1)").css("-webkit-filter", "grayscale("+grayscale+")");
+        loadMainContent(image);
+
+    }).transition().duration(1500)
+    .style("opacity", 1);
+
 }
 
-function animateMenuItem(menuItem) {
+function generateContentHTML(htmlArray) {
 
-    if ($(menuItem).find("a:first-child").css("color") != "rgb(255, 255, 255)") {
-        $(menuItem).find("a:first-child").css("color", "#C23627");
+    var html = '';
+
+    for (var i = 0; i < htmlArray.length; i++) {
+        if (htmlArray[i].heading || htmlArray[i].subtitle) {
+            html += '<h2>';
+            if (htmlArray[i].heading) { html += htmlArray[i].heading; }
+            if (htmlArray[i].subtitle) { html += ' <span>'+htmlArray[i].subtitle+'</span>'; }
+            html += '</h2>';
+        }
+        for (var j = 0; j < htmlArray[i].subheadings.length; j++) {
+            html += '<h3>'+htmlArray[i].subheadings[j].subheading+'</h3>';
+            for (var k = 0; k < htmlArray[i].subheadings[j].paragraphs.length; k++) {
+                html += '<p>'+htmlArray[i].subheadings[j].paragraphs[k]+'</p>';
+            }
+        }
     }
 
-    $(menuItem).css("border-bottom-color", "#C23627");
-    $(menuItem).find("a:first-child").animate({
-        right: $(menuItem).width() //width of the content area of <li>
-            +0.8*parseFloat($(menuItem).css("font-size")) //the <li> margin is 0.8em
-            -$(menuItem).find("a:first-child").width(), //the width of the text itself
-    }, {
-        duration: 1000,
-        queue: false,
-    });
-
-}
-
-function deanimateMenuItem(menuItem) {
-
-    $(menuItem).find("a:first-child").css("color", "");
-    $(menuItem).css("border-bottom-color", "").css("background-color", "");
-    $(menuItem).find("a:first-child").animate({
-        right: 0.8*parseFloat($(menuItem).css("font-size")),
-    }, {
-        duration: 1000,
-        queue: false,
-    });
-
-}
-
-function register() {
-    console.log('register');
-}
-
-function setupHoverEvents() {
-
-    $('ul#menu li').hover(function() {
-        animateMenuItem(this);
-    }, function() {
-        deanimateMenuItem(this);
-    });
+    return html;
 
 }
 
 // KICKOFF!
+$('#mainContent').css("opacity", 0);
 setupHoverEvents();

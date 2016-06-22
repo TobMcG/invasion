@@ -81,6 +81,7 @@ ul#menu {
     font-style: italic;
     width: var(--sideMenuWidth);
     height: 100%;
+    overflow: auto;
     padding: 0px;
     margin: 0px;
 }
